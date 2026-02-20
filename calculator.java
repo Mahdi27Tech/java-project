@@ -27,11 +27,12 @@ public class Calculator {
         System.out.println("Enter second number: ");
         int snum = obj.nextInt();
         //System.out.println(snum);
+        obj.next();
         
         System.out.println("Choose an operator to use");
         operators();
         String op = obj.nextLine();
-        System.out.println(op);
+        //System.out.println(op);
         
         switch(op){
             case "+":
@@ -44,7 +45,11 @@ public class Calculator {
                 System.out.println(fnum * snum);
                 break;
             case "/":
-                System.out.println(fnum / snum);
+                if(snum != 0){
+                    System.out.println(fnum / snum);
+                } else {
+                    System.out.println("Error cannot dive by zero");
+                }
                 break;
             case "%":
                 System.out.println(fnum % snum);
